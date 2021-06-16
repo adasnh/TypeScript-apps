@@ -1,24 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operacje na liczbach</title>
+  <meta charset="utf-8">
+
+  <title>Operacje arytmetyczne</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
-    <div class="inputFields">
-        <input type="text" id="input1">
-        <input type="text" id="input2">
-        <input type="text" id="input3">
-        <input type="text" id="input4">
-    </div>
-    <div class="outputFields">  
-        <input type="text" id="sum">
-        <input type="text" id="average">
-        <input type="text" id="minimum">
-        <input type="text" id="maximum">
-    </div>
-    <script src="./dist/index.js" ></script>
+  <div class="app">
+      <div class="inputField">
+        <p>Podaj ilość liczb</p>
+        <input type="text" id="inputs" >
+      </div>
+      <div id="newInputs">
+      </div>
+      <div class="buttons">
+        <button type="button" onclick="calculateApp1.addButton();" id="add">Dodaj kolejną liczbę</button>
+        <button type="button" onclick="calculateApp1.deleteButton();" id="delete">Usuń</button>
+        <button type="button" onclick="calculateApp1.randomButton();" id="rendom">Wypełnij losowymi liczbami</button>
+      </div>
+      <div id="loader">
+        <div class="lds-spinner">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+          </div>
+      </div>
+      <div class="data">
+          <p>Suma</p>
+          <input type="text" id="sum" disabled="disabled">
+          <p>Średnia</p>
+          <input type="text" id="avg" disabled="disabled">
+          <p>Min</p>
+          <input type="text" id="min" disabled="disabled">
+          <p>Max</p>
+          <input type="text" id="max" disabled="disabled">
+       </div>
+  </div>
+    <script src="index.js"></script>
+  
 </body>
 </html>

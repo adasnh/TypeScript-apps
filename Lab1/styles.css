@@ -1,0 +1,213 @@
+body {
+  width: 300px;
+  background-color: beige;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app{
+  background-color: royalblue;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  -webkit-box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.75);
+}
+
+.inputField {
+  background-color: lightpink;
+  width: 240px;
+  height: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  border-radius: 15%;
+  border-style:solid;
+  border-width: 2px;
+  border-left-color: white;
+  border-right-color: white;
+  border-top-color: white;
+  border-bottom-color: white;
+}
+
+.inputField input{
+    background-color: #f1d8d8;
+  display: block;
+  padding-top: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 0.5px;
+}
+
+.data {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 240px;
+  height: 250px;
+  border-radius: 5%;
+  background-color: lightpink;
+  border-style:solid;
+  border-width: 2px;
+  border-left-color: white;
+  border-right-color: white;
+  border-top-color: white;
+  border-bottom-color: white;
+}
+
+p {
+    color: 	black;
+    text-align: center;
+    margin-bottom: 2%;
+  }
+
+#newInputs{
+  background-color: lightpink;
+  width: 280px; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2px;
+  border-radius: 12%;
+  border-style:solid;
+  border-width: 2px;
+  border-left-color: white;
+  border-right-color: white;
+  border-top-color: white;
+  border-bottom-color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#newInputs input{
+  background-color: rgb(236, 213, 213);
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 0.5px;
+  border-style: dotted;
+}
+
+.data input{
+  color:black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(235, 228, 228);
+  width: 300px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid dimgray;
+}
+
+button:hover {
+  background: lightpink;
+}
+  
+#loader{
+  background-color: lightpink;
+  width: 300px;
+  height: 32%;
+  position:absolute;
+  display: flex;
+  justify-content: center;
+	align-items: center;
+}
+
+.lds-spinner {
+    color: royalblue;
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  .lds-spinner div {
+    transform-origin: 32px 32px;
+    animation: lds-spinner 1.2s linear infinite;
+  }
+  .lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 29px;
+    width: 5px;
+    height: 14px;
+    border-radius: 20%;
+    background:royalblue;
+  }
+  .lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+  }
+  .lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+  }
+  .lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+  }
+  .lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+  }
+  .lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+  }
+  .lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+  }
+  .lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+  }
+  .lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+  }
+  .lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+  }
+  .lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+  }
+  .lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+  }
+  .lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+  }
+  @keyframes lds-spinner {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
