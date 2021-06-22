@@ -1,60 +1,50 @@
 //#region 
-let boomSound: HTMLAudioElement
-let clapSound: HTMLAudioElement
-let hihatSound: HTMLAudioElement
-let kickSound: HTMLAudioElement
-let openhatSound: HTMLAudioElement
-let rideSound: HTMLAudioElement
-let aNoteSound: HTMLAudioElement
-let asNoteSound: HTMLAudioElement
-let bNoteSound: HTMLAudioElement
-let bsNoteSound: HTMLAudioElement
-let cNoteSound: HTMLAudioElement
-let csNoteSound: HTMLAudioElement
-let dNoteSound: HTMLAudioElement
-let dsNoteSound: HTMLAudioElement
-let eNoteSound: HTMLAudioElement
-let fNoteSound: HTMLAudioElement
-let fsNoteSound: HTMLAudioElement
-let gNoteSound: HTMLAudioElement
-let gsNoteSound: HTMLAudioElement
-let snareSound: HTMLAudioElement
-let tinkSound: HTMLAudioElement
-let tomSound: HTMLAudioElement
+var boomSound;
+var clapSound;
+var hihatSound;
+var kickSound;
+var openhatSound;
+var rideSound;
+var aNoteSound;
+var asNoteSound;
+var bNoteSound;
+var bsNoteSound;
+var cNoteSound;
+var csNoteSound;
+var dNoteSound;
+var dsNoteSound;
+var eNoteSound;
+var fNoteSound;
+var fsNoteSound;
+var gNoteSound;
+var gsNoteSound;
+var snareSound;
+var tinkSound;
+var tomSound;
 //#endregion
-
-
-
-const channel0: any[] = [];
-const channel1: any[] = [];
-const channel2: any[] = [];
-
-const recordPlace: HTMLDivElement =  document.querySelector('#recordArea');
-const playButton: HTMLButtonElement = document.querySelector("#play");
-const recButton0: HTMLInputElement =  document.querySelector('#record0');
-const recButton1: HTMLInputElement =  document.querySelector('#record1');
-const recButton2: HTMLInputElement =  document.querySelector('#record2');
-
-
-
-
-  const selectChannelBox: HTMLInputElement[] = [
+var channel0 = [];
+var channel1 = [];
+var channel2 = [];
+var recordPlace = document.querySelector('#recordArea');
+var playButton = document.querySelector("#play");
+var recButton0 = document.querySelector('#record0');
+var recButton1 = document.querySelector('#record1');
+var recButton2 = document.querySelector('#record2');
+var selectChannelBox = [
     document.querySelector('#play0'),
     document.querySelector('#play1'),
     document.querySelector('#play2'),
-  ];
-
-  appStart();
-  function appStart(): void {
-      findSounds();
-      recordPlace.addEventListener('click', setStartingTime);
-      window.addEventListener('keypress', onKeyDown);
-      playButton.addEventListener('click', playSelectedChannel);
-      recButton0.addEventListener('click', setCurrentTime);
-      setCurrentTime();
-  }
-
-  function findSounds(): void{
+];
+appStart();
+function appStart() {
+    findSounds();
+    recordPlace.addEventListener('click', setStartingTime);
+    window.addEventListener('keypress', onKeyDown);
+    playButton.addEventListener('click', playSelectedChannel);
+    recButton0.addEventListener('click', setCurrentTime);
+    setCurrentTime();
+}
+function findSounds() {
     boomSound = document.querySelector('[data-sound="boom"]');
     clapSound = document.querySelector('[data-sound="clap"]');
     hihatSound = document.querySelector('[data-sound="hihat"]');
@@ -77,20 +67,15 @@ const recButton2: HTMLInputElement =  document.querySelector('#record2');
     gNoteSound = document.querySelector('[data-sound="noteG"]');
     gsNoteSound = document.querySelector('[data-sound="noteGs"]');
 }
-
-let startingTime = 0;
-
-function setCurrentTime(){
+var startingTime = 0;
+function setCurrentTime() {
     startingTime = Date.now();
 }
-
-let startingRecordTime = 0;
-
-function setStartingTime(ev: MouseEvent): void {
+var startingRecordTime = 0;
+function setStartingTime(ev) {
     startingRecordTime = ev.timeStamp;
 }
-
-function playSound(key: string){
+function playSound(key) {
     switch (key) {
         case '1':
             boomSound.currentTime = 0;
@@ -202,62 +187,49 @@ function playSound(key: string){
             gNoteSound.play();
     }
 }
-
-function playSelectedChannel()
-{
+function playSelectedChannel() {
     if (selectChannelBox[0].checked) {
-        playChannel0();}
-
-       if (selectChannelBox[1].checked) {
-        playChannel1();}
-
-       if (selectChannelBox[2].checked) {
-        playChannel2();}
+        playChannel0();
+    }
+    if (selectChannelBox[1].checked) {
+        playChannel1();
+    }
+    if (selectChannelBox[2].checked) {
+        playChannel2();
+    }
 }
-
-function onKeyDown(ev: KeyboardEvent): void {
+function onKeyDown(ev) {
     recordChannel(ev);
 }
-
-function clickToSelectChannel(ev: MouseEvent): void {
+function clickToSelectChannel(ev) {
     setStartingTime(ev);
 }
-
-function recordChannel(ev: KeyboardEvent): void{
-    const key = ev.key;
-    const time = ev.timeStamp - startingRecordTime;
+function recordChannel(ev) {
+    var key = ev.key;
+    var time = ev.timeStamp - startingRecordTime;
     playSound(key);
-
     if (recButton0.checked) {
-        channel0.push({key, time});
-        
-       } else if (recButton1.checked) {
-        channel1.push({key, time});
-
-       } else if (recButton2.checked) {
-        channel2.push({key, time});
-       } 
+        channel0.push({ key: key, time: time });
+    }
+    else if (recButton1.checked) {
+        channel1.push({ key: key, time: time });
+    }
+    else if (recButton2.checked) {
+        channel2.push({ key: key, time: time });
+    }
 }
-
-
-
-function playChannel0(): void{
-    channel0.forEach(sound => {
-        setTimeout(() => playSound(sound.key), sound.time)
-    })
+function playChannel0() {
+    channel0.forEach(function (sound) {
+        setTimeout(function () { return playSound(sound.key); }, sound.time);
+    });
 }
-
-function playChannel1(): void{
-    channel1.forEach(sound => {
-        setTimeout(() => playSound(sound.key), sound.time)
-    })
+function playChannel1() {
+    channel1.forEach(function (sound) {
+        setTimeout(function () { return playSound(sound.key); }, sound.time);
+    });
 }
-
-function playChannel2(): void{
-    channel2.forEach(sound => {
-        setTimeout(() => playSound(sound.key), sound.time)
-    })
+function playChannel2() {
+    channel2.forEach(function (sound) {
+        setTimeout(function () { return playSound(sound.key); }, sound.time);
+    });
 }
-
-
-

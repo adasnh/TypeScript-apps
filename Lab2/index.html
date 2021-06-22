@@ -4,12 +4,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drumkit</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Piano</title>
 </head>
 <body>
-    <audio src="sounds/clap.wav" data-sound="clap"></audio>
-    <audio src="sounds/boom.wav" data-sound="boom"></audio>
-    <button id="playChannel1">Play channel 1</button>
-    <script src="index.js"></script>
+    <div id="page"> 
+        <div id="header">
+
+
+        </div>
+        <div id="content">
+            <img class="img"src="sounds/power.png"></img>
+            <div id=additionalSounds>
+                <button id=button00 onmousedown="boom.play()"></button>
+                <button id=button01 onmousedown="clap.play()"></button>
+                <button id=button02 onmousedown="hihat.play()"></button>
+                <button id=button03 onmousedown="kick.play()"></button>
+                <button id=button04 onmousedown="openhat.play()"></button>
+                <button id=button05 onmousedown="ride.play()"></button>
+                <button id=button06 onmousedown="snare.play()"></button>
+                <button id=button07 onmousedown="tink.play()"></button>
+                <button id=button08 onmousedown="tom.play()"></button>
+            </div>
+            <div id=pads>
+                    <button class="white a" onmousedown="noteA.play()"></button>
+                    <button class="black as" onmousedown="noteAs.play()"></button>
+                    <button class="white b" onmousedown="noteB.play()"></button>
+                    <button class="black bs" onmousedown="noteBs.play()"></button>
+                    <button class="white c" onmousedown="noteC.play()"></button>
+                    <button class="black cs" onmousedown="noteCs.play()"></button>
+                    <button class="white d" onmousedown="noteD.play()"></button>
+                    <button class="black ds" onmousedown="noteDs.play()"></button>
+                    <button class="white e" onmousedown="noteE.play()"></button>
+                    <button class="black gs" onmousedown="noteGs.play()"></button>
+                    <button class="white f" onmousedown="noteF.play()"></button>
+                    <button class="black fs" onmousedown="noteFs.play()"></button>
+                    <button class="white g" onmousedown="noteG.play()"></button>
+                    
+            </div>
+            <div id=control>   
+                <div id=recordArea>
+                    <div id=record>
+                        <p>Channel 1</p>
+                        <input type="checkbox" id=record0></input>
+                    </div>
+                    <div id=record>
+                        <p>Channel 2</p>
+                        <input type="checkbox" id=record1></input>
+                    </div>
+                    <div id=record>
+                        <p>Channel 3</p>
+                        <input type="checkbox" id=record2></input>
+                    </div>
+                </div>
+                <div id=playArea>
+                    <div id=channel class="channel">
+                        <input type="checkbox" id=play0></input>
+                        <p>Channel 1</p>
+                    </div>
+                    <div id=channel class="channel">
+                        <input type="checkbox" id=play1></input>
+                        <p>Channel 2</p>
+                    </div>
+                    <div id=channel class="channel">
+                        <input type="checkbox" id=play2></input>
+                        <p>Channel 3</p>
+                    </div>
+                    <div id=controlPanel>
+                            <button id=play >PLAY</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+    <audio id="boom" src="sounds/boom.wav" data-sound="boom"></audio> 
+    <audio id="clap" src="sounds/clap.wav" data-sound="clap"></audio>   
+    <audio id="hihat" src="sounds/hihat.wav" data-sound="hihat"></audio>   
+    <audio id="kick" src="sounds/kick.wav" data-sound="kick"></audio>   
+    <audio id="openhat" src="sounds/openhat.wav" data-sound="openhat"></audio>   
+    <audio id="ride" src="sounds/ride.wav" data-sound="ride"></audio>   
+    <audio id="snare" src="sounds/snare.wav" data-sound="snare"></audio>     
+    <audio id="tink" src="sounds/tink.wav" data-sound="tink"></audio>     
+    <audio id="tom" src="sounds/tom.wav" data-sound="tom"></audio> 
+    <audio id="noteC" src="sounds/NoteC.wav" data-sound="noteC"></audio>   
+    <audio id="noteCs" src="sounds/NoteCs.wav" data-sound="noteCs"></audio>   
+    <audio id="noteA" src="sounds/NoteA.wav" data-sound="noteA"></audio>   
+    <audio id="noteAs" src="sounds/NoteAs.wav" data-sound="noteAs"></audio>   
+    <audio id="noteB" src="sounds/NoteB.wav" data-sound="noteB"></audio>
+    <audio id="noteBs" src="sounds/NoteBs.wav" data-sound="noteBs"></audio>     
+    <audio id="noteD" src="sounds/NoteD.wav" data-sound="noteD"></audio>
+    <audio id="noteG" src="sounds/NoteG.wav" data-sound="noteG"></audio>
+    <audio id="noteDs" src="sounds/NoteDs.wav" data-sound="noteDs"></audio>  
+    <audio id="noteE" src="sounds/NoteE.wav" data-sound="noteE"></audio>    
+    <audio id="noteF" src="sounds/NoteF.wav" data-sound="noteF"></audio>    
+    <audio id="noteFs" src="sounds/NoteFs.wav" data-sound="noteFs"></audio>    
+    <audio id="noteGs" src="sounds/NoteGs.wav" data-sound="noteGs"></audio>    
+<script src="index.js"></script>
 </body>
 </html>
