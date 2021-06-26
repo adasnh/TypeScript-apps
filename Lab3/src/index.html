@@ -6,14 +6,19 @@
     <title>Pogodynka</title>
   </head>
   <body>
-    <header>
-      <H1>Podaj Miasto</H1>
-      <input type="text" placeholder="np. Warszawa"/>
-      <button id ="mainBtn">Dodaj</button>
-    </header>
-    <main>
-      
-    </main>
+    <H1>Sprawdz pogodę w dowolnym miejscu na świecie</H1>
+      <div id="inputBox">
+        <button id='deleteButton'onclick="localStorage.clear" onclick="location.reload">Wyczyść</button>
+        <input type='text' id='cityInput' placeholder="np. Warszawa"/>
+        <button id='addButton'>
+          Sprawdz miasto
+        </button>
+        
+      </div>
+     
+    <div class='checkedCities'>
+
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

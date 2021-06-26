@@ -1,6 +1,6 @@
 class App1
 {
-    //pobierami div z html
+   
     main: HTMLDivElement = <HTMLDivElement>document.getElementById('newInputs')
     variable: HTMLInputElement = <HTMLInputElement>document.getElementById('inputs')
     calculations: HTMLDivElement = <HTMLDivElement>document.getElementById('data')
@@ -15,7 +15,7 @@ class App1
     
 
     
-    //Tablica inputow do obliczen - tablica
+   
     numbersArray: number[] = [];
     inputsArray: number[] = [];
     newForm: HTMLInputElement;
@@ -23,25 +23,17 @@ class App1
 
     constructor()
     {
-        this.getInputs()
-        //Tablica inputow do obliczen
+        this.sumOutput = document.querySelector('#sum');
+        this.averageOutput = document.querySelector('#avg');
+        this.minOutput = document.querySelector('#min');
+        this.maxOutput = document.querySelector('#max');
         this.createInput();
         this.showSum();
         this.showAvg();
         this.showMin();
         this.showMax();
-        this.hiddenLoader();
-        var x = this.main.getElementsByTagName('input')
-        console.log(x);
-        
-    }
-
-    getInputs()
-    {
-        this.sumOutput = document.querySelector('#sum');
-        this.averageOutput = document.querySelector('#avg');
-        this.minOutput = document.querySelector('#min');
-        this.maxOutput = document.querySelector('#max');
+        this.showLoader();
+        // var x = this.main.getElementsByTagName('input')
     }
 
     hiddenLoader()
@@ -54,23 +46,27 @@ class App1
         this.loader.style.visibility ='visible';
     }
 
-
     createInput()
     {
-        //obsługa triggerowania inputow
+        
         this.variable.addEventListener("input", () => 
         {
             this.showLoader();
             const inputValue : number = +this.variable.value;
             this.main.innerHTML = '';
-
-            for (let i = 0; i < inputValue; i++)
+            if (inputValue > 30) 
             {
-                this.newForm = document.createElement('input');
-                this.newForm.id = "form"+i
-                this.newForm.placeholder = 'Podaj liczbę'
-                this.main.appendChild(this.newForm);
-                console.log(this.newForm.id)
+                alert("Wprowadzono za dużą liczbę")
+            }
+            else
+            {
+                for (let i = 0; i < inputValue; i++)
+                {
+                    this.newForm = document.createElement('input');
+                    this.newForm.id = "form"+i
+                    this.newForm.placeholder = 'Podaj liczbę'
+                    this.main.appendChild(this.newForm);       
+                }
             }
         });
     }
@@ -83,27 +79,22 @@ class App1
             {
                 this.numbersArray[i] = +(document.getElementById('form'+i) as HTMLInputElement).value;
             }
-
     }
 
     showSum()
     {
-        
         this.main.addEventListener("input", () => 
         {
-            this.showLoader();
-            this.getValues();
+            // this.showLoader();
+             this.getValues();
             let sum : number = 0;
-
             for (let i = 0; i < this.numbersArray.length; i++)
                 {
                     sum += +this.numbersArray[i];
                 }
-
             this.sumOutput.value = sum.toString();
             this.hiddenLoader();
         });
-        
     }
 
     showAvg()
@@ -111,28 +102,22 @@ class App1
         this.main.addEventListener("input", () => 
         {
             this.getValues();
-
                 let sum : number = 0;
-
                 for (let i = 0; i < this.numbersArray.length; i++)
                     {
                         sum += +this.numbersArray[i];
                     }
-
-                let avg: number = sum/this.numbersArray.length;
+                let avg: number = roundTo(sum/this.numbersArray.length, 3);
                 this.averageOutput.value = avg.toString();
-        });
+        });   
     }
 
     showMin()
-    {
-        
+    {  
         this.main.addEventListener("input", () => 
         {
             this.getValues();
-
             let min = Math.min(...this.numbersArray);
-        
             this.minOutput.value = min.toString();
         });
     }
@@ -143,9 +128,7 @@ class App1
         this.main.addEventListener("input", () => 
         {
             this.getValues();
-
             let max = Math.max(...this.numbersArray);
-        
             this.maxOutput.value = max.toString();
         });
     }
@@ -157,7 +140,6 @@ class App1
         this.newForm = document.createElement('input');
         this.newForm.id = "form"+(numberOfInputs.length)
         this.newForm.placeholder = 'Podaj liczbę'
-        
         this.main.appendChild(this.newForm);
     }
 
@@ -171,6 +153,7 @@ class App1
 
     randomButton()
     {
+        
         function getRandomIntInclusive(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
@@ -184,8 +167,18 @@ class App1
             
             fill.value = getRandomIntInclusive(0, 100);
         }
-
+        
     }
 }
 
+function roundTo(n, digits) {
+    if (digits === undefined) {
+      digits = 0;
+    }
+  
+    var multiplicator = Math.pow(10, digits);
+    n = parseFloat((n * multiplicator).toFixed(11));
+    var test =(Math.round(n) / multiplicator);
+    return +(test.toFixed(digits));
+  }
 const calculateApp1 = new App1();

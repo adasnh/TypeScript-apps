@@ -14,16 +14,16 @@
 
 <body>
   <div class="app">
-      <div class="inputField">
-        <p>Podaj ilość liczb</p>
-        <input type="text" id="inputs" >
+      <div class="inputField" >
+        <p>Podaj ilość liczb(maks30)</p>
+        <input type="text" id="inputs" placeholder="" >
       </div>
       <div id="newInputs">
       </div>
       <div class="buttons">
         <button type="button" onclick="calculateApp1.addButton();" id="add">Dodaj kolejną liczbę</button>
         <button type="button" onclick="calculateApp1.deleteButton();" id="delete">Usuń</button>
-        <button type="button" onclick="calculateApp1.randomButton();" id="rendom">Wypełnij losowymi liczbami</button>
+        <button type="button" onclick="calculateApp1.randomButton();" id="random">Wypełnij losowo</button>
       </div>
       <div id="loader">
         <div class="lds-spinner">
@@ -31,13 +31,13 @@
           </div>
       </div>
       <div class="data">
-          <p>Suma</p>
+          <p>Suma =</p>
           <input type="text" id="sum" disabled="disabled">
-          <p>Średnia</p>
+          <p>Średnia =</p>
           <input type="text" id="avg" disabled="disabled">
-          <p>Min</p>
+          <p>Najmniejsza =</p>
           <input type="text" id="min" disabled="disabled">
-          <p>Max</p>
+          <p>Najwieksza =</p>
           <input type="text" id="max" disabled="disabled">
        </div>
   </div>

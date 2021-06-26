@@ -1,6 +1,5 @@
 var App1 = /** @class */ (function () {
     function App1() {
-        //pobierami div z html
         this.main = document.getElementById('newInputs');
         this.variable = document.getElementById('inputs');
         this.calculations = document.getElementById('data');
@@ -8,26 +7,20 @@ var App1 = /** @class */ (function () {
         this.removeButton = document.getElementById('delete');
         this.random_Button = document.getElementById('random');
         this.loader = document.getElementById('loader');
-        //Tablica inputow do obliczen - tablica
         this.numbersArray = [];
         this.inputsArray = [];
-        this.getInputs();
-        //Tablica inputow do obliczen
+        this.sumOutput = document.querySelector('#sum');
+        this.averageOutput = document.querySelector('#avg');
+        this.minOutput = document.querySelector('#min');
+        this.maxOutput = document.querySelector('#max');
         this.createInput();
         this.showSum();
         this.showAvg();
         this.showMin();
         this.showMax();
-        this.hiddenLoader();
-        var x = this.main.getElementsByTagName('input');
-        console.log(x);
+        this.showLoader();
+        // var x = this.main.getElementsByTagName('input')
     }
-    App1.prototype.getInputs = function () {
-        this.sumOutput = document.querySelector('#sum');
-        this.averageOutput = document.querySelector('#avg');
-        this.minOutput = document.querySelector('#min');
-        this.maxOutput = document.querySelector('#max');
-    };
     App1.prototype.hiddenLoader = function () {
         this.loader.style.visibility = 'hidden';
     };
@@ -36,17 +29,20 @@ var App1 = /** @class */ (function () {
     };
     App1.prototype.createInput = function () {
         var _this = this;
-        //obsługa triggerowania inputow
         this.variable.addEventListener("input", function () {
             _this.showLoader();
             var inputValue = +_this.variable.value;
             _this.main.innerHTML = '';
-            for (var i = 0; i < inputValue; i++) {
-                _this.newForm = document.createElement('input');
-                _this.newForm.id = "form" + i;
-                _this.newForm.placeholder = 'Podaj liczbę';
-                _this.main.appendChild(_this.newForm);
-                console.log(_this.newForm.id);
+            if (inputValue > 30) {
+                alert("Wprowadzono za dużą liczbę");
+            }
+            else {
+                for (var i = 0; i < inputValue; i++) {
+                    _this.newForm = document.createElement('input');
+                    _this.newForm.id = "form" + i;
+                    _this.newForm.placeholder = 'Podaj liczbę';
+                    _this.main.appendChild(_this.newForm);
+                }
             }
         });
     };
@@ -59,7 +55,7 @@ var App1 = /** @class */ (function () {
     App1.prototype.showSum = function () {
         var _this = this;
         this.main.addEventListener("input", function () {
-            _this.showLoader();
+            // this.showLoader();
             _this.getValues();
             var sum = 0;
             for (var i = 0; i < _this.numbersArray.length; i++) {
@@ -77,7 +73,7 @@ var App1 = /** @class */ (function () {
             for (var i = 0; i < _this.numbersArray.length; i++) {
                 sum += +_this.numbersArray[i];
             }
-            var avg = sum / _this.numbersArray.length;
+            var avg = roundTo(sum / _this.numbersArray.length, 3);
             _this.averageOutput.value = avg.toString();
         });
     };
@@ -123,4 +119,13 @@ var App1 = /** @class */ (function () {
     };
     return App1;
 }());
+function roundTo(n, digits) {
+    if (digits === undefined) {
+        digits = 0;
+    }
+    var multiplicator = Math.pow(10, digits);
+    n = parseFloat((n * multiplicator).toFixed(11));
+    var test = (Math.round(n) / multiplicator);
+    return +(test.toFixed(digits));
+}
 var calculateApp1 = new App1();

@@ -27,6 +27,7 @@ var channel1 = [];
 var channel2 = [];
 var recordPlace = document.querySelector('#recordArea');
 var playButton = document.querySelector("#play");
+var clearButton = document.querySelector("#clear");
 var recButton0 = document.querySelector('#record0');
 var recButton1 = document.querySelector('#record1');
 var recButton2 = document.querySelector('#record2');
@@ -41,6 +42,7 @@ function appStart() {
     recordPlace.addEventListener('click', setStartingTime);
     window.addEventListener('keypress', onKeyDown);
     playButton.addEventListener('click', playSelectedChannel);
+    clearButton.addEventListener('click', clearChannels);
     recButton0.addEventListener('click', setCurrentTime);
     setCurrentTime();
 }
@@ -197,6 +199,11 @@ function playSelectedChannel() {
     if (selectChannelBox[2].checked) {
         playChannel2();
     }
+}
+function clearChannels() {
+    channel0 = [];
+    channel1 = [];
+    channel2 = [];
 }
 function onKeyDown(ev) {
     recordChannel(ev);

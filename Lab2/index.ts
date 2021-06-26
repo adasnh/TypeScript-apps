@@ -25,12 +25,13 @@ let tomSound: HTMLAudioElement
 
 
 
-const channel0: any[] = [];
-const channel1: any[] = [];
-const channel2: any[] = [];
+let channel0: any[] = [];
+let channel1: any[] = [];
+let channel2: any[] = [];
 
 const recordPlace: HTMLDivElement =  document.querySelector('#recordArea');
 const playButton: HTMLButtonElement = document.querySelector("#play");
+const clearButton: HTMLButtonElement = document.querySelector("#clear")
 const recButton0: HTMLInputElement =  document.querySelector('#record0');
 const recButton1: HTMLInputElement =  document.querySelector('#record1');
 const recButton2: HTMLInputElement =  document.querySelector('#record2');
@@ -45,16 +46,17 @@ const recButton2: HTMLInputElement =  document.querySelector('#record2');
   ];
 
   appStart();
-  function appStart(): void {
+  function appStart() {
       findSounds();
       recordPlace.addEventListener('click', setStartingTime);
       window.addEventListener('keypress', onKeyDown);
       playButton.addEventListener('click', playSelectedChannel);
+      clearButton.addEventListener('click', clearChannels)
       recButton0.addEventListener('click', setCurrentTime);
       setCurrentTime();
   }
 
-  function findSounds(): void{
+  function findSounds(){
     boomSound = document.querySelector('[data-sound="boom"]');
     clapSound = document.querySelector('[data-sound="clap"]');
     hihatSound = document.querySelector('[data-sound="hihat"]');
@@ -86,7 +88,7 @@ function setCurrentTime(){
 
 let startingRecordTime = 0;
 
-function setStartingTime(ev: MouseEvent): void {
+function setStartingTime(ev: MouseEvent) {
     startingRecordTime = ev.timeStamp;
 }
 
@@ -214,46 +216,54 @@ function playSelectedChannel()
        if (selectChannelBox[2].checked) {
         playChannel2();}
 }
+function clearChannels(){
+    channel0 = [];
+    channel1 = [];
+    channel2 = [];
+}
 
-function onKeyDown(ev: KeyboardEvent): void {
+function onKeyDown(ev: KeyboardEvent) {
     recordChannel(ev);
 }
 
-function clickToSelectChannel(ev: MouseEvent): void {
+function clickToSelectChannel(ev: MouseEvent) {
     setStartingTime(ev);
 }
 
-function recordChannel(ev: KeyboardEvent): void{
+function recordChannel(ev: KeyboardEvent){
     const key = ev.key;
     const time = ev.timeStamp - startingRecordTime;
     playSound(key);
 
     if (recButton0.checked) {
+
         channel0.push({key, time});
         
        } else if (recButton1.checked) {
+
         channel1.push({key, time});
 
        } else if (recButton2.checked) {
+
         channel2.push({key, time});
        } 
 }
 
 
 
-function playChannel0(): void{
+function playChannel0(){
     channel0.forEach(sound => {
         setTimeout(() => playSound(sound.key), sound.time)
     })
 }
 
-function playChannel1(): void{
+function playChannel1(){
     channel1.forEach(sound => {
         setTimeout(() => playSound(sound.key), sound.time)
     })
 }
 
-function playChannel2(): void{
+function playChannel2(){
     channel2.forEach(sound => {
         setTimeout(() => playSound(sound.key), sound.time)
     })

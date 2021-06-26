@@ -1,15 +1,13 @@
-
 body {
   background: lightblue;
-} 
-
-h1{
-  position: relative;
-  left : 30%;
-  
 }
 
-#deleteButton{
+h1 {
+  position: relative;
+  left: 30%;
+}
+
+#deleteButton {
   position: relative;
 }
 
@@ -21,59 +19,60 @@ h1{
   border-top-right-radius: 15%;
   border-top-left-radius: 15%;
   border-bottom-right-radius: 0%;
-  background-color: yellowgreen ;
+  background-color: yellowgreen;
   box-shadow: green 1px 1px 2px 2px inset, white 0px 1px 3px 1px inset;
-
 }
+
 .nameOfTheCity {
   position: relative;
-  left:2.6em;
+  left: 2.6em;
   top: 0.1em;
   margin-bottom: 0.3em;
   font-size: xx-large;
-  border-bottom:solid 5px linen;
+  border-bottom: solid 5px linen;
   color: darkblue;
 }
 
 .temperature {
   position: relative;
-  left:3em;
-  top:0.4em;
+  left: 3em;
+  top: 0.4em;
   margin-top: 0.6em;
   margin-bottom: 0.6em;
-  font-size:20px;
+  font-size: 20px;
   color: darkblue;
 }
 
 .pressure {
   position: relative;
-  left:3em;
-  top:0.6em;
+  left: 3em;
+  top: 0.6em;
   margin-top: 0.6em;
   margin-bottom: 0.3em;
-  font-size:20px;
+  font-size: 20px;
   color: darkblue;
 }
 
 .wind {
   position: relative;
-  left:3em;
-  top:1em;
+  left: 3em;
+  top: 1em;
   margin-top: 0.6em;
   margin-bottom: 0.3em;
-  font-size:20px;
+  font-size: 20px;
   color: darkblue;
 }
 
-.desc{
+.desc {
   position: relative;
-  left:1.5em;
-  top:0.2em;
-  font-size:20px;
+  left: 1.5em;
+  top: 0.2em;
+  font-size: 20px;
   font-style: oblique;
   color: darkblue;
 }
-#inputBox{
+
+#inputBox {
   display: flex;
   justify-content: center;
   height: 2em;
@@ -81,16 +80,13 @@ h1{
   margin-bottom: 5%;
 }
 
-.checkedCities{
+.checkedCities {
   display: flex;
   height: auto;
   width: auto;
   justify-content: center;
   flex-wrap: wrap;
   background-color: lightblue;
-  border: dotted  5px white;
+  border: dotted 5px white;
   border-radius: 1%;
 }
-
-
-

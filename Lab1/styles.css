@@ -1,23 +1,31 @@
 body {
   width: 300px;
-  background-color: beige;
+  background-color: royalblue;;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: orange 10px 30px 10px -40px inset, orange 0px 9px 50px 8px inset;
 }
 
 .app{
+  position: relative;
+  right:80%;
   background-color: royalblue;
-  height: auto;
+  height: 100em;
+  min-height: 40em;
+  width: 50em;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
-  -webkit-box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.75);
+  border-radius: 5%;
+  
+
 }
 
 .inputField {
-  background-color: lightpink;
+  background-color: royalblue;
+  position: absolute;
+  left: 1em;
+  top:0.3em;
   width: 240px;
   height: 65px;
   margin-left: auto;
@@ -30,32 +38,39 @@ body {
   border-right-color: white;
   border-top-color: white;
   border-bottom-color: white;
+  z-index: 9999999;
+  box-shadow: orange 1px 2px 2px 3px inset, orange 3px 1px 3px 3px inset;
 }
 
 .inputField input{
-    background-color: #f1d8d8;
+    background-color: rgba(239, 239, 239, 0.72) ;
   display: block;
   padding-top: 1px;
   margin-left: auto;
   margin-right: auto;
   border-width: 0.5px;
+  
 }
 
 .data {
   margin-left: auto;
+  position: relative;
+  left:1em;
+  top:8em;
   margin-right: auto;
   margin-top: 5%;
   margin-bottom: 5%;
   width: 240px;
-  height: 250px;
+  height: 450px;
   border-radius: 5%;
-  background-color: lightpink;
+  background-color: royalblue;
   border-style:solid;
   border-width: 2px;
   border-left-color: white;
   border-right-color: white;
   border-top-color: white;
   border-bottom-color: white;
+  box-shadow: orange 1px 2px 5px 5px inset, orange 1px 1px 3px 2px inset;
 }
 
 p {
@@ -65,9 +80,12 @@ p {
   }
 
 #newInputs{
-  background-color: lightpink;
+  position: absolute;
+  top: 5em;
+  background-color: royalblue;
   width: 280px; 
   display: block;
+  min-height: 5em;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2px;
@@ -80,30 +98,46 @@ p {
   border-bottom-color: white;
   padding-top: 5px;
   padding-bottom: 5px;
+  box-shadow: orange 1px 1px 2px 2px inset, orange 0px 1px 3px 1px inset;
 }
 
 #newInputs input{
-  background-color: rgb(236, 213, 213);
+  background-color:  rgba(239, 239, 239, 0.72);
   width: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-width: 0.5px;
   border-style: dotted;
+  
 }
 
 .data input{
-  color:black;
+  position: inherit;
+  color: black;
   display: block;
+  margin: 1em;
   margin-left: auto;
   margin-right: auto;
+  height: 2.2em;
+  width: 6em;
+  left:3em;
+}
+.data p {
+  position: inherit;
+  margin: 1em;
+  top: 2.7em;
+  left:-4em;
 }
 
 .buttons{
-  display: flex;
+  display: block;
+  position: absolute;
+  top: -5em;
+  right:1em;
   justify-content: center;
-  background-color: rgb(235, 228, 228);
-  width: 300px;
+  background-color: royalblue;
+  width: 10em;
   margin-top: 5%;
   margin-bottom: 5%;
   margin-left: auto;
@@ -112,28 +146,38 @@ p {
 
 button {
   width: 180px;
+  margin-top: 10em;
   height: 40px;
   cursor: pointer;
   background: transparent;
+  background-color: rgba(239, 239, 239, 0.72);
   border: 2px solid dimgray;
+  border-radius: 15%;
+  box-shadow: orange 1px 1px 2px -4px inset, orange 0px 1px 5px 1px inset;
 }
 
 button:hover {
-  background: lightpink;
+  background: rgba(239, 239, 239, 0.2);
 }
   
 #loader{
-  background-color: lightpink;
-  width: 300px;
-  height: 32%;
+  background-color: royalblue;
+  width: 25%;
+  height: 26%;
   position:absolute;
+  top: 9em;
+  left:19em;
   display: flex;
   justify-content: center;
 	align-items: center;
+  z-index: 9999;
+  
+  border-radius: 5%;
 }
 
 .lds-spinner {
-    color: royalblue;
+    color: orange;
+    left:1em;
     display: inline-block;
     position: relative;
     width: 64px;
@@ -152,7 +196,7 @@ button:hover {
     width: 5px;
     height: 14px;
     border-radius: 20%;
-    background:royalblue;
+    background:orange;
   }
   .lds-spinner div:nth-child(1) {
     transform: rotate(0deg);
