@@ -3,22 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pogodynka</title>
+    <title>Notes</title>
   </head>
   <body>
-    <H1>Sprawdz pogodę w dowolnym miejscu na świecie</H1>
-      <div id="inputBox">
-        <button id='deleteButton'onclick="localStorage.clear" onclick="location.reload">Wyczyść</button>
-        <input type='text' id='cityInput' placeholder="np. Warszawa"/>
-        <button id='addButton'>
-          Sprawdz miasto
-        </button>
-        
-      </div>
-     
-    <div class='checkedCities'>
+      <enterNote id="enterNoteContainer">
+        <noteContainer id='noteContainer'>
+          <h1>Create new note!</h1>
+            <input type='text' placeholder="Enter Title" id='enterTitle' maxlength="20"/>
+            <input type='text' placeholder="Enter Text" id='enterText' maxlength="30"/>
+              <colorAndButtonDiv id='colorAndButtonDiv'>
+                <label id="pinLabel">Pin</label>
+                <input type='checkbox'  id='pinnedNote'/>
+                <label id="colorLabel">Color</label>
+                <input type='color'   id='Color'/>
+                  <button id='addButton'>Add</button>
+              </colorAndButtonDiv>
+        </noteContainer>
+      </enterNote>
+    
+    <notesContainer id='notesContainer'>
 
-    </div>
+      <p id='textInfo'>Pinned Notes</p>
+        <hr style="width: 99%;">
+      <pinnedNotesContainer id='pinnedNotesContainer'>
+          
+      </pinnedNotesContainer>
+        <p id='textInfo'>Unpinned Notes</p>
+          <hr style="width: 99%;">
+        <unpinnedNotesContainer id='unpinnedNotesContainer'>
+          
+        </unpinnedNotesContainer>
+
+    </notesContainer>
     <script src="index.js"></script>
   </body>
 </html>

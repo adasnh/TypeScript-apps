@@ -1,0 +1,161 @@
+body {
+  background:royalblue;
+  color:#fff;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 3%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+#enterNoteContainer{
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+  margin-bottom: 0;
+}
+
+#noteContainer{
+  background-color: goldenrod;
+  color: black;
+  padding: 1%;
+  padding-top: 0;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center;
+  word-wrap: break-word;
+  
+  h1{
+    margin: 0.5%;
+    margin-top: 6%;
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 5%;
+  }  
+
+  #colorAndButtonDiv{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 6%;
+    input{
+      height: 30px;
+      width: 30px;
+    }
+    button{
+      font-size: medium;
+    }
+    label{
+      font-size: 22px;
+    }
+  }
+
+  #pinLabel{
+    margin-top:1px;
+    margin-left: 1rem;
+  }
+ #pinnedNote{
+   margin-top: 0rem;
+   margin-right: 1rem;
+   width: 30px;
+   height: 30px;
+ #colorLabel{
+   margin-top: 0rem;
+ }
+ }
+  input{
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size:  15px;
+    line-height: 2;
+    outline: transparent;
+    font-weight: bold;
+    color: royalblue;
+  }
+}
+
+#notesContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+#pinnedNotesContainer{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#unpinnedNotesContainer{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+#textInfo{
+  margin: 1%;
+  margin-left: 2%;
+  margin-bottom: 0;
+  font-size:x-large;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+
+.mainNoteDiv{
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.88);
+  -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.88);
+  box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.88);
+
+  text-decoration:none;
+  color:#000;
+  justify-content: flex-end;
+  height:10em;
+  width:10em;
+  padding:1%;
+  padding-top: 0%;
+  padding-right: 0.6%;
+}
+
+.noteDiv{
+  justify-content: center;
+  display: flex;
+}
+
+.noteTitleDiv{
+  font-weight: bold;
+  font-size: 25px;
+  border-bottom: solid black 3px;
+  text-align: center;
+}
+
+.textDiv{
+  font-size: 16px;
+  font-weight: normal;
+  padding-top: 2%;
+  margin-bottom: 15%;
+  padding-right: 2%;
+  width: 100%;
+}
+
+
+.deleteDiv{
+  color: rgba(145, 33, 33, 0.88);
+  font-weight: 800;
+  margin-bottom: 3%;
+  padding-left: 92%;
+  background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+    outline:none;
+}
+
+.dataDiv{
+  margin-top: 10%;
+}

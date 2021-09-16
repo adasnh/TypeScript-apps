@@ -114,7 +114,6 @@ var App = /** @class */ (function () {
         savedData = JSON.parse(data);
         for (var i = 0; i < savedData.length; i++) {
             this.citiesArray.push(savedData[i]);
-            this.saveData(this.citiesArray);
             this.getCityInfo(savedData[i]);
         }
     };

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiszki</title>
+  </head>
+  <body>
+      <enterNote id="enterNoteContainer">
+        <noteContainer id='noteContainer'>
+          <h1>Stwórz nową fiszkę !</h1>
+            <input type='text' placeholder="Wprowadz tytuł..." id='enterTitle' maxlength="10"/>
+            <input type='text' placeholder="Wprowadz tekst..." id='enterText' maxlength="15"/>
+              <colorAndButtonDiv id='colorAndButtonDiv'>
+                <input type='checkbox'   id='pinnedNote'/>
+                <input type='color'   id='enterColor'/>
+                  <button id='addButton'>
+                    +
+                  </button>
+              </colorAndButtonDiv>
+        </noteContainer>
+      </enterNote>
+    
+    <notesContainer id='notesContainer'>
+
+      <p id='textInfo'>Przypięte fiszki</p>
+        <hr style="width: 99%;">
+      <notesContainerPinned id='notesContainerPinned'>
+          
+      </notesContainerPinned>
+        <p id='textInfo'>Nieprzypięte fiszki</p>
+          <hr style="width: 99%;">
+        <notesContainerUnPinned id='notesContainerUnPinned'>
+          
+        </notesContainerUnPinned>
+
+    </notesContainer>
+    <script src="index.js"></script>
+  </body>
+</html>

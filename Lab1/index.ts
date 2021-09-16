@@ -85,7 +85,6 @@ class App1
     {
         this.main.addEventListener("input", () => 
         {
-            // this.showLoader();
              this.getValues();
             let sum : number = 0;
             for (let i = 0; i < this.numbersArray.length; i++)

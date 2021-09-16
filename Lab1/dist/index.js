@@ -55,7 +55,6 @@ var App1 = /** @class */ (function () {
     App1.prototype.showSum = function () {
         var _this = this;
         this.main.addEventListener("input", function () {
-            // this.showLoader();
             _this.getValues();
             var sum = 0;
             for (var i = 0; i < _this.numbersArray.length; i++) {

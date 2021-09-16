@@ -32,7 +32,6 @@ export class App {
         this.saveData(this.citiesArray);
     }
     async getCityInfo(city: string) {
-        
         const weather = await this.getWeather(city);
         console.log(weather);
         let name:string=weather.name;
@@ -58,7 +57,6 @@ export class App {
         for(let i=0;i<savedData.length;i++)
           {
               this.citiesArray.push(savedData[i])
-              this.saveData(this.citiesArray)
               this.getCityInfo(savedData[i]);
           }  
     }
